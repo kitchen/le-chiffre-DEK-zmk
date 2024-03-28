@@ -14,7 +14,6 @@
     gpio-controller;
     spi-max-frequency = <200000>;
     reg = <0>;
-    label = "4HC595";
     #gpio-cells = <2>;
     ngpios = <8>;
   };
@@ -28,7 +27,6 @@
 
   kscan0: kscan_0 {
     compatible = "zmk,kscan-gpio-matrix";
-    label = "KSCAN";
 
     debounce-press-ms = <1>;
     debounce-release-ms = <5>;
