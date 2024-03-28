@@ -1,2 +1,0 @@
-config SHIELD_LE_CHIFFRE_DEK
-  def_bool $(shields_list_contains,le_chiffre_dek)
