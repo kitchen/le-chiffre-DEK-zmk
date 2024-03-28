@@ -1,0 +1,53 @@
+&pro_micro_spi {
+  status = "okay";
+
+  cs-gpios = <&pro_micro 18 (GPIO_ACTIVE_LOW)>;
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <200000>;
+    reg = <0>;
+    label = "4HC595";
+    #gpio-cells = <2>;
+    ngpios = <8>;
+  };
+
+};
+
+/ {
+  chosen {
+    zmk,kscan = &kscan0
+  };
+
+  // need to figure out the pro micro equivalent to &xiao_spi
+
+  kscan0: kscan_0 {
+    compatible = "zmk,kscan-gpio-matrix";
+    label = "KSCAN";
+
+    debounce-press-ms = <1>;
+    debounce-release-ms = <5>;
+
+    diode-direction = "row2col";
+
+    col-gpios
+      = <&shift_reg 15 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
+      , <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
+      ;
+
+    row-gpios
+      = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+      , <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+      , <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+      , <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+      , <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)
+      ;
+  };
+}
