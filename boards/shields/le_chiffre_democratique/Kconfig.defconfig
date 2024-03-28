@@ -1,6 +1,6 @@
 if SHIELD_LE_CHIFFRE_DEMOCRATIQUE
 
   config ZMK_KEYBOARD_NAME
-    default "Le Chiffre Democratique"
+    default "LC Democratique"
 
 endif
