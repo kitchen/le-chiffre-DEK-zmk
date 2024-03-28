@@ -5,7 +5,8 @@
   pinctrl-0 = <&spisr_default>;
   pinctrl-1 = <&spisr_sleep>;
   pinctrl-names = "default", "sleep";
-  cs-gpios = <&pro_micro 17 (GPIO_ACTIVE_LOW)>;
+  // FIXME: this is the wrong pin but I want this to BUILD
+  cs-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW)>;
 
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
