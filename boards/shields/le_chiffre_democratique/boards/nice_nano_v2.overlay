@@ -16,7 +16,7 @@
             , <NRF_PSEL(SPIM_MOSI, 0, 6)>
             , <NRF_PSEL(SPIM_MISO, 0, 7)>
             ;
-      low_power_enable;
+      low-power-enable;
     };
   };
 };
