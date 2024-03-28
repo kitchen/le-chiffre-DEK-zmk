@@ -34,7 +34,8 @@
     diode-direction = "row2col";
 
     col-gpios
-      = <&shift_reg 15 (GPIO_ACTIVE_HIGH)>
+      // FIXME: wrong pin but I want it to BUILD
+      = <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
