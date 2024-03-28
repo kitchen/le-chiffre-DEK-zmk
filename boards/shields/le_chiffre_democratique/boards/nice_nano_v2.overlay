@@ -1,0 +1,26 @@
+
+&pinctrl {
+  spisr_default: spisr_default {
+    group1 {
+      // FIXME: these pins are wrong but I want to get this building
+      psels = <NRF_PSEL(SPIM_SCK, 0, 5)>
+            , <NRF_PSEL(SPIM_MOSI, 0, 6)>
+            , <NRF_PSEL(SPIM_MISO, 0, 7)>
+            ;
+    };
+  };
+
+  spisr_sleep: spisr_sleep {
+    group1 {
+      psels = <NRF_PSEL(SPIM_SCK, 0, 5)>
+            , <NRF_PSEL(SPIM_MOSI, 0, 6)>
+            , <NRF_PSEL(SPIM_MISO, 0, 7)>
+            ;
+      low_power_enable;
+    };
+  };
+};
+
+&pro_micro_i2c {
+  status = "disabled";
+};
