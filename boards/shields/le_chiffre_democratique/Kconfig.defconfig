@@ -1,7 +1,7 @@
 if SHIELD_LE_CHIFFRE_DEMOCRATIQUE
 
   config ZMK_KEYBOARD_NAME
-    default "LC Democratique"
+    default "DEK le Chiffre"
 
   config SPI
     default y
