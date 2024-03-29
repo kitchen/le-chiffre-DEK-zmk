@@ -1,1 +1,2 @@
 #include "nice_nano_spi.dtsi"
+#include "nice_nano_underglow.dtsi"
