@@ -1,0 +1,12 @@
+file_format: "1"
+id: le_chiffre_democratique
+type: shield
+# FIXME: better canonical url for this
+url: https://github.com/sadekbaroudi/Le-Chiffre-Keyboard
+requires: [ pro_micro ]
+features:
+  - keys
+  - underglow
+  - encoders
+  # FIXME: I don't see any other shields with this. should this be a feature or a provide or?
+  - vik
