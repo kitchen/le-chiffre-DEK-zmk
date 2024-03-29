@@ -3,4 +3,7 @@ if SHIELD_LE_CHIFFRE_DEMOCRATIQUE
   config ZMK_KEYBOARD_NAME
     default "LC Democratique"
 
+  config SPI
+    default y
+
 endif
