@@ -3,10 +3,11 @@
 &pro_micro_spi {
   status = "okay";
 
-  pinctrl-0 = <&spisr_default>;
-  pinctrl-1 = <&spisr_sleep>;
+  pinctrl-0 = <&spi0_default>;
+  pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
-  // FIXME: this is the wrong pin but I want this to BUILD
+
+  // pin 13 or 10 or PB6 or whatever the fuck on pro micro
   cs-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW)>;
 
   shift_reg: 595@0 {
@@ -50,8 +51,7 @@
     diode-direction = "row2col";
 
     col-gpios
-      // FIXME: wrong pin but I want it to BUILD
-      = <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
+      = <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 1 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 2 (GPIO_ACTIVE_HIGH)>
       , <&shift_reg 3 (GPIO_ACTIVE_HIGH)>
