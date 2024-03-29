@@ -45,6 +45,8 @@
         &kp Z
         &kp Z
       >;
+
+      sensor-bindings = <&inc_dec_kp Z Z>;
     };
   };
 };
